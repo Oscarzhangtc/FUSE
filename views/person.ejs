@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+
+<%- include('partials/navbar2'); %>
+
+<div class="person">
+
+  <h1><%=user.name%></h1>
+
+
+  <p>Skills: <%= user.description.skills%></p>
+  <p>Interest: <%= user.description.interest%></p>
+
+</div>
+
+<%- include("partials/footer"); -%>

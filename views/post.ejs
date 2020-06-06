@@ -1,0 +1,23 @@
+<%- include("partials/header"); -%>
+
+<%- include('partials/navbar2'); %>
+
+<div class="post">
+
+
+  <h1><%=title%></h1>
+
+  <p><%=body%></p>
+  <p>Looking for People with: <%=lookingfor%></p>
+  <p>Time commitment: <%=commitment%></p>
+  <p>Date: <%=date%></p>
+
+
+  <a href="/people/<%=userWithThatPost._id%>"><%=userWithThatPost.name%></a>
+
+  <p>Email: <%=userWithThatPost.username%></p>
+
+</div>
+
+
+<%- include("partials/footer"); -%>

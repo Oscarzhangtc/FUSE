@@ -1,0 +1,113 @@
+<!-- jshint esversion:6-->
+
+<%- include('partials/registerloginheader'); -%>
+
+<div class="container mt-5">
+  <h1>Login</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <!-- <form action="/login" onsubmit="getLocation()" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+            <input id="currentUserLattitude" type=hidden name="currentLocation" value="placeholder">
+            <input id="currentUserLongitude" type=hidden name="currentLocation" value="placeholder">
+            <button type="submit" class="btn btn-dark">Login</button>
+
+
+          </form> -->
+          <form id="form" action="/login" onsubmit="getLocation()" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+            <input id="currentUserLattitude" type=hidden name="currentUserLattitude" value="placeholder">
+            <input id="currentUserLongitude" type=hidden name="currentUserLongitude" value="placeholder">
+            <button type="submit" class="btn btn-dark">Login</button>
+
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <a class="btn btn-block btn-info" href="/register" role="button">
+            Not registered?
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<script>
+  function getLocation(e) {
+    // Create new promise
+    return new Promise(resolve => {
+      if (navigator.geolocation) {
+        // Since getCurrentPosition is asynchronous, resolve in the onsuccess callback.
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            onGeoSuccess(position);
+            // promise resovles after onGeoSuccess completes
+            resolve();
+          },
+          error => {
+            onGeoError(error);
+            resolve();
+          }
+        );
+      } else {
+        alert("Geolocation is not supported by this browser.");
+        // Return to the .then()
+        resolve();
+      }
+    });
+  }
+
+  function onGeoSuccess(position) {
+    document.getElementById("currentUserLattitude").value =
+      position.coords.latitude;
+    document.getElementById("currentUserLongitude").value =
+      position.coords.longitude;
+  }
+
+  function onGeoError(err) {
+    console.log("Error code " + err.code + ". " + err.message);
+  }
+
+  document.getElementById("form").addEventListener("submit", e => {
+    // Prevent submission
+    e.preventDefault();
+
+    getLocation().then(() => {
+      // forms submits only when getLocation is resolved
+      return e.target.submit();
+    });
+  });
+
+
+</script>
+<%- include('partials/footer'); -%>

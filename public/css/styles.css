@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box
+}
+
+/* https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+.body {
+
+}
+
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+
+.title{
+  background-color: white;
+  color: black;
+  text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat-Black" , "Montserrat";
+
+
+}
+/* heading */
+.big-heading{
+  font-size: 3.5rem;
+  line-height: 1.5;
+  font-weight: 900;
+}
+
+
+h2{
+}
+
+h3{
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+p{
+  color: #8f8f8f;
+}
+.container-fluid{
+  padding: 3% 15% 3%;
+
+}
+
+
+body{
+  font-family: "Montserrat";
+}
+
+/* Navigation Bar */
+.navbar{
+  padding: 0 0 10px;
+}
+.nav-item{
+  padding: 0 18px;
+}
+
+.navbar-brand{
+  font-family: "Ubuntu";
+  color: #2ebdf2;
+  font-size: 2.5rem;
+}
+
+
+.navbar-btn {
+  width: 100%
+}
+/* download buttons */
+
+.download-button{
+  margin: 5% 3% 5% 0;
+}
+
+/* title */
+
+.home-buttons{
+  width: 100%;
+  right: 7%;
+  margin-top: 200px;
+}
+
+.idea-buttons{
+/* hierarchical selector causes color to not change when hovering in this case with a changed background-color */
+  margin: 2px 2px;
+  width: 100%;
+  font-size: 0.9rem;
+  background-color: #2ebdf2;
+  border: #2ebdf2;
+}
+/* footer */
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+/* --------------------Ideas Page-------------------- */
+
+.idea {
+  text-align: center;
+}
+/* --------------------Post Page-------------------- */
+
+.post {
+  text-align: center;
+}
+/* --------------------People Page-------------------- */
+#people {
+  
+}
+
+.person {
+  text-align: left;
+}
+
+/* --------------------Compose Page-------------------- */
+.compose-container{
+  text-align: left;
+  padding-left: 7% ;
+  padding-right: 7%;
+  margin-bottom: 10%;
+}
+
+#thisismyidea{
+  margin-bottom: 2%;
+  text-align: center;
+
+}
+
+/* --------------------Me Page-------------------- */
+
+
+
+/* Profile container */
+
+.profile {
+  margin: 20px 0;
+}
+
+.profile-nav{
+  flex-wrap: wrap;
+  padding-left: 0;
+  text-align: left;
+  line-height: 1.5;
+}
+.profile-nav .btn{
+  margin-bottom: 5px;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}

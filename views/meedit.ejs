@@ -1,0 +1,67 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar2') %>
+
+
+
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						<%=name%>
+					</div>
+					<div class="profile-usertitle-job">
+						Developer
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="profile-nav">
+
+              <a class="btn navbar-btn btn-default btn-md" href="/me" role="button">About Me</a>
+              <a class="btn navbar-btn btn-default btn-md" href="/me" role="button">Account Setting</a>
+              <a class="btn navbar-btn btn-default btn-md" href="/me" role="button">My Endeavors</a>
+              <a class="btn navbar-btn btn-default btn-md" href="/me" role="button">Help</a>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+      <form class="editpage" action="/meedit" method="post">
+
+            <div class="profile-content">
+
+              <h4>My Skills:</h4>
+              <input type="text" name="newSkills" value="<%=userDescription.skills%>">
+
+              <h4>My Interest:</h4>
+              <input type="text" name="newInterest" value="<%=userDescription.interest%>">
+
+
+            </div>
+            <button class="btn btn-primary" type="submit" name="button">Save</button>
+            
+          </form>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,33 @@
+<%- include('partials/header'); %>
+
+<%- include('partials/navbar2'); %>
+
+
+<div class="idea">
+
+
+    <%  userWithPosts.forEach(function(user){%>
+      <%if (String(user._id) !== String(currentUserId)) { %>
+
+      <%# have to do in ejs because i need the posts of every user so i need access every found user with posts %>
+      <%# creating a post [] with the push function in the app.js does NOT work since post will get pushed every time the route is called  %>
+          <% user.posts.forEach(function(post){ %>
+
+        <h1><%= post.title %></h1>
+
+        <%const trimmedBody = post.body.substring(0, 100);%>
+        <p><%= trimmedBody + "..."%></p>
+        <a href="/posts/<%=post._id%>">Read More</a>
+
+          <%});%>
+          <%}%>
+      <%});%>
+
+</div>
+
+
+
+
+
+
+<%- include('partials/footer'); %>

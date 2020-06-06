@@ -1,0 +1,139 @@
+<%- include('partials/header'); %>
+
+<%- include('partials/navbar2'); %>
+
+
+
+
+
+
+<div class="container">
+  <div class="row profile">
+    <div class="col-md-3 col-sm-4">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+          <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+        </div>
+        <!-- END SIDEBAR USERPIC -->
+        <!-- SIDEBAR USER TITLE -->
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            <%=currentUser.name%>
+          </div>
+          <div class="profile-usertitle-job">
+            Developer
+          </div>
+        </div>
+        <!-- END SIDEBAR USER TITLE -->
+
+        <!-- SIDEBAR MENU -->
+        <div class="profile-usermenu">
+          <ul class="profile-nav">
+
+            <a class="btn navbar-btn btn-default btn-md" href="/me" role="button">About Me</a>
+            <a class="btn navbar-btn btn-default btn-md" href="/me" role="button">Account Setting</a>
+            <a class="btn navbar-btn btn-default btn-md" href="/me" role="button">My Endeavors</a>
+            <a class="btn navbar-btn btn-default btn-md" href="/me" role="button">Help</a>
+          </ul>
+        </div>
+        <!-- END MENU -->
+      </div>
+    </div>
+
+
+
+    <div id="people" class="col-md-9 col-sm-8">
+      <nav id="peopleNavbar" class="navbar navbar-expand-sm navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nearby">Nearby</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </nav>
+
+
+        <%  allUser.forEach(function(user){%>
+
+        <%if (String(user._id) !== String(currentUser._id)) { %>
+        <div class="person">
+
+          <h2>
+            <%= user.name %>
+          </h2>
+          <%const trimmedBody1 = user.description.skills.substring(0, 100);%>
+          <p><strong>Skills: </strong>
+            <%= trimmedBody1 + "..."%>
+          </p>
+          <%const trimmedBody2 = user.description.interest.substring(0, 100);%>
+          <p><strong>Interest: </strong>
+            <%= trimmedBody2 + "..."%>
+          </p>
+
+          <a href="/people/<%=user._id%>">Read More</a>
+          <%# user._id is still a objectId/object atm %>
+
+
+
+        <%}%>
+        <%});%>
+
+
+        <h4 id="fat">@fat</h4>
+        <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure.
+          Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco
+          consequat.
+        </p>
+        <h4 id="fat">@fat</h4>
+        <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure.
+          Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco
+          consequat.
+        </p>
+        <h4 id="fat">@fat</h4>
+        <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure.
+          Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco
+          consequat.
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+<%- include('partials/footer'); %>

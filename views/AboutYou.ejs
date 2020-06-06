@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+
+
+
+<div class="compose-container">
+
+<h1 id="thisismyidea">Tell us about yourself.</h1>
+
+<form class="" action="/aboutyou" method="post">
+  <!-- // forms allows us to pass -->
+  <div class="form-group">
+
+    <label for="title">Your Name?</label>
+    <input class="form-control" type="text" name="name" value="" required>
+
+
+    <label for="title">What your Skills?</label>
+    <textarea class="form-control" name="skills" rows="8" cols="80" required></textarea>
+
+    <label for="post">What is your interest?</label>
+    <textarea class="form-control" name="interest" rows="8" cols="80" required></textarea>
+
+  </div>
+
+  <button class="btn btn-primary" type="submit" name="button">Submit</button>
+
+</form>
+</div>
+
+<%- include('partials/footer') %>

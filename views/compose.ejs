@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar2') %>
+
+
+<div class="compose-container">
+
+<h1 id="thisismyidea">This is my idea.</h1>
+
+<form class="" action="/compose" method="post">
+  <!-- // forms allows us to pass info -->
+  <div class="form-group">
+
+    <label for="postTitle">The idea in a few words:</label>
+    <input class="form-control" type="text" name="postTitle" value="" required>
+
+    <label for="postBody">More about it:</label>
+    <textarea class="form-control" name="postBody" rows="8" cols="80" required></textarea>
+
+    <label for="lookingfor">I'm Looking for:</label>
+    <input class="form-control" type="text" name="lookingfor" value="" required>
+
+    <label for="commitment">Time commitment:</label>
+    <input class="form-control" type="text" name="commitment" value="" required>
+    <p value="dt">Date:</p>
+    <p id="datetime"></p>
+    <input id="datetimevalue" type=hidden name="date" value="">
+
+  </div>
+
+  <button class="btn btn-primary" type="submit" name="button">Publish</button>
+
+</form>
+</div>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+document.getElementById("datetimevalue").value = dt.toLocaleDateString();
+
+</script>
+<%- include('partials/footer') %>
